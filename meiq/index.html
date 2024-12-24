@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>社区</title>
+    <title>调用</title>
     <style>
         body, html {
             margin: 0;
@@ -13,33 +13,33 @@
             width: 100%;
             height: auto;
             display: block;
-            cursor: pointer; /* 鼠标指针样式 */
+            cursor: pointer; 
         }
     </style>
 </head>
 <body>
 
-   <img src="static/picture/d_01.jpg"  onclick="downloadFile('aHR0cHM6Ly93d3cuZHJvcGJveC')">
-    <img src="static/picture/d_02.jpg"  onclick="downloadFile('aHR0cHM6Ly93d3cuZHJvcGJveC')">
-    <img src="static/picture/d_03.jpg" onclick="downloadFile('aHR0cHM6Ly93d3cuZHJvcGJveC')">
-	<img src="static/picture/d_04.jpg"  onclick="downloadFile('aHR0cHM6Ly93d3cuZHJvcGJveC')">
-	<img src="static/picture/d_05.jpg"  onclick="downloadFile('aHR0cHM6Ly93d3cuZHJvcGJveC')">
-	 <img src="static/picture/d_06.jpg"  onclick="downloadFile('aHR0cHM6Ly93d3cuZHJvcGJveC')">
-	 <img src="static/picture/d_07.jpg"  onclick="downloadFile('aHR0cHM6Ly93d3cuZHJvcGJveC')">
+   <img src="static/picture/d_01.jpg"  onclick="downloadFile('a')">
+    <img src="static/picture/d_02.jpg"  onclick="downloadFile('a')">
+    <img src="static/picture/d_03.jpg" onclick="downloadFile('a')">
+	<img src="static/picture/d_04.jpg"  onclick="downloadFile('a')">
+	<img src="static/picture/d_05.jpg"  onclick="downloadFile('a')">
+	 <img src="static/picture/d_06.jpg"  onclick="downloadFile('a')">
+	 <img src="static/picture/d_07.jpg"  onclick="downloadFile('a')">
 
     <script>
         function base64Decode(base64) {
-            return atob(base64); // 
+            return atob(base64);  
         }
 
         function downloadFile(encodedUrl) {
-            const url = base64Decode(encodedUrl); // 
+            const url = base64Decode(encodedUrl);  
             const link = document.createElement('a');
             link.href = url;
-            link.download = ''; // 
-            document.body.appendChild(link); // 
-            link.click(); // 
-            document.body.removeChild(link); // 
+            link.download = '';  
+            document.body.appendChild(link); 
+            link.click(); 
+            document.body.removeChild(link);  
         }
     </script>
 
