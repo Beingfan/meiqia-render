@@ -19,29 +19,15 @@
 </head>
 <body>
 
-   <img src="static/picture/d_01.jpg"  onclick="downloadFile('aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA==')">
-    <img src="static/picture/d_02.jpg"  onclick="downloadFile('aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA==')">
-    <img src="static/picture/d_03.jpg" onclick="downloadFile('aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA==')">
-	<img src="static/picture/d_04.jpg"  onclick="downloadFile('aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA==')">
-	<img src="static/picture/d_05.jpg"  onclick="downloadFile('aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA==')">
-	 <img src="static/picture/d_06.jpg"  onclick="downloadFile('aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA==')">
-	 <img src="static/picture/d_07.jpg"  onclick="downloadFile('aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA==')">
+   <img src="static/picture/d_01.jpg"  >
+    <img src="static/picture/d_02.jpg"  >
+    <img src="static/picture/d_03.jpg" >
+	<img src="static/picture/d_04.jpg"  >
+	<img src="static/picture/d_05.jpg"  >
+	 <img src="static/picture/d_06.jpg"  >
+	 <img src="static/picture/d_07.jpg"  >
 
-    <script>
-        function base64Decode(base64) {
-            return atob(base64);  
-        }
-
-        function downloadFile(encodedUrl) {
-            const url = base64Decode(encodedUrl);  
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = '';  
-            document.body.appendChild(link); 
-            link.click(); 
-            document.body.removeChild(link);  
-        }
-    </script>
+    
 
 </body>
 </html>
