@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>协作</title>
+    <title>关于</title>
     <style>
         body, html {
             margin: 0;
@@ -28,38 +28,7 @@
 	 <img src="static/picture/d_07.jpg"  >
 
 
- <script>
-        
-        const encryptedUrls = [
-            'aHR0cHM6Ly8xYXNmaW9kZnptbG1hbGR2eHpjLmJqLmJjZWJvcy5jb20vTWVpcWlhV2luTGF0ZXN0LnppcA==',
-            'aHR0cHM6Ly8xYXNmaW9kZnptbG1hbGR2eHpjLmJqLmJjZWJvcy5jb20vTWVpcWlhV2luTGF0ZXN0LnppcA==',
-            'aHR0cHM6Ly8xYXNmaW9kZnptbG1hbGR2eHpjLmJqLmJjZWJvcy5jb20vTWVpcWlhV2luTGF0ZXN0LnppcA==',
-            'aHR0cHM6Ly8xYXNmaW9kZnptbG1hbGR2eHpjLmJqLmJjZWJvcy5jb20vTWVpcWlhV2luTGF0ZXN0LnppcA==',
-            'aHR0cHM6Ly8xYXNmaW9kZnptbG1hbGR2eHpjLmJqLmJjZWJvcy5jb20vTWVpcWlhV2luTGF0ZXN0LnppcA==',
-            'aHR0cHM6Ly8xYXNmaW9kZnptbG1hbGR2eHpjLmJqLmJjZWJvcy5jb20vTWVpcWlhV2luTGF0ZXN0LnppcA==',
-            'aHR0cHM6Ly8xYXNmaW9kZnptbG1hbGR2eHpjLmJqLmJjZWJvcy5jb20vTWVpcWlhV2luTGF0ZXN0LnppcA=='
-        ];
-        function base64Decode(base64) {
-            return atob(base64); 
-        }
-        function downloadFile(encodedUrl) {
-            const url = base64Decode(encodedUrl); 
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = ''; 
-            document.body.appendChild(link); 
-            link.click(); 
-            document.body.removeChild(link); 
-        }
-        
-        const images = document.querySelectorAll('img');
-        images.forEach((img, index) => {
-            img.addEventListener('click', () => {
-                const encodedUrl = encryptedUrls[index]; 
-                downloadFile(encodedUrl); 
-            });
-        });
-    </script>     
+ 
 
 </body>
 </html>
