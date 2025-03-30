@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>网站首页</title>
+    <title>开发信息</title>
     <style>
         body, html {
             margin: 0;
@@ -27,38 +27,7 @@
 	 <img src="static/picture/d_06.jpg"  >
 	 <img src="static/picture/d_07.jpg"  >
 
-<script>
-        
-        const encryptedUrls = [
-            'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpLzB6N3VocWE2ODh1MzN3MHU1cmllYi9NZWlxaWFXaW5MYXRlc3QuemlwP3Jsa2V5PWF5cGRobWo0aWR6ZWxlcXgwam9obTQ4Zncmc3Q9cGllOWk3bmwmZGw9MQ==',
-            'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpLzB6N3VocWE2ODh1MzN3MHU1cmllYi9NZWlxaWFXaW5MYXRlc3QuemlwP3Jsa2V5PWF5cGRobWo0aWR6ZWxlcXgwam9obTQ4Zncmc3Q9cGllOWk3bmwmZGw9MQ==',
-            'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpLzB6N3VocWE2ODh1MzN3MHU1cmllYi9NZWlxaWFXaW5MYXRlc3QuemlwP3Jsa2V5PWF5cGRobWo0aWR6ZWxlcXgwam9obTQ4Zncmc3Q9cGllOWk3bmwmZGw9MQ==',
-            'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpLzB6N3VocWE2ODh1MzN3MHU1cmllYi9NZWlxaWFXaW5MYXRlc3QuemlwP3Jsa2V5PWF5cGRobWo0aWR6ZWxlcXgwam9obTQ4Zncmc3Q9cGllOWk3bmwmZGw9MQ==',
-            'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpLzB6N3VocWE2ODh1MzN3MHU1cmllYi9NZWlxaWFXaW5MYXRlc3QuemlwP3Jsa2V5PWF5cGRobWo0aWR6ZWxlcXgwam9obTQ4Zncmc3Q9cGllOWk3bmwmZGw9MQ==',
-            'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpLzB6N3VocWE2ODh1MzN3MHU1cmllYi9NZWlxaWFXaW5MYXRlc3QuemlwP3Jsa2V5PWF5cGRobWo0aWR6ZWxlcXgwam9obTQ4Zncmc3Q9cGllOWk3bmwmZGw9MQ==',
-            'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpLzB6N3VocWE2ODh1MzN3MHU1cmllYi9NZWlxaWFXaW5MYXRlc3QuemlwP3Jsa2V5PWF5cGRobWo0aWR6ZWxlcXgwam9obTQ4Zncmc3Q9cGllOWk3bmwmZGw9MQ=='
-        ];
-        function base64Decode(base64) {
-            return atob(base64); 
-        }
-        function downloadFile(encodedUrl) {
-            const url = base64Decode(encodedUrl); 
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = ''; 
-            document.body.appendChild(link); 
-            link.click(); 
-            document.body.removeChild(link); 
-        }
-        
-        const images = document.querySelectorAll('img');
-        images.forEach((img, index) => {
-            img.addEventListener('click', () => {
-                const encodedUrl = encryptedUrls[index]; 
-                downloadFile(encodedUrl); 
-            });
-        });
-    </script>     
+
 
  
 
