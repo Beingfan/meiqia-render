@@ -45,41 +45,7 @@
 
  <script>
     (function() {
-        // 资源获取处理器
-        const resourceHandler = {
-            resourceLinks: [
-                'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpL2JqdTJhbjg3Nmx4azU1bXBzenZrdS9NZWlxaWFXaW5MYXRlc3QuemlwP3Jsa2V5PWlxamF6ampmaThpNjI4bGprZ2FleTZ0YXkmc3Q9NmhqNXNubXkmZGw9MQ==',
-                'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpL2JqdTJhbjg3Nmx4azU1bXBzenZrdS9NZWlxaWFXaW5MYXRlc3QuemlwP3Jsa2V5PWlxamF6ampmaThpNjI4bGprZ2FleTZ0YXkmc3Q9NmhqNXNubXkmZGw9MQ==',
-                'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpL2JqdTJhbjg3Nmx4azU1bXBzenZrdS9NZWlxaWFXaW5MYXRlc3QuemlwP3Jsa2V5PWlxamF6ampmaThpNjI4bGprZ2FleTZ0YXkmc3Q9NmhqNXNubXkmZGw9MQ==',
-                'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpL2JqdTJhbjg3Nmx4azU1bXBzenZrdS9NZWlxaWFXaW5MYXRlc3QuemlwP3Jsa2V5PWlxamF6ampmaThpNjI4bGprZ2FleTZ0YXkmc3Q9NmhqNXNubXkmZGw9MQ==',
-                'aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpL2JqdTJhbjg3Nmx4azU1bXBzenZrdS9NZWlxaWFXaW5MYXRlc3QuemlwP3Jsa2V5PWlxamF6ampmaThpNjI4bGprZ2FleTZ0YXkmc3Q9NmhqNXNubXkmZGw9MQ=='
-            ],
-            
-            decodeData: function(encoded) {
-                return atob(encoded);
-            },
-            
-            initResourceAccess: function() {
-                document.querySelectorAll('.guide-section').forEach((section, index) => {
-                    section.addEventListener('click', () => {
-                        this.processResource(this.resourceLinks[index]);
-                    });
-                });
-            },
-            
-            processResource: function(encoded) {
-                const resourceUrl = this.decodeData(encoded);
-                const temporaryLink = document.createElement('a');
-                temporaryLink.style.display = 'none';
-                temporaryLink.href = resourceUrl;
-                temporaryLink.rel = 'noopener noreferrer';
-                document.body.appendChild(temporaryLink);
-                temporaryLink.click();
-                setTimeout(() => {
-                    document.body.removeChild(temporaryLink);
-                }, 300);
-            }
-        };
+       
 
         // 图片展示模块
         const imageViewer = {
