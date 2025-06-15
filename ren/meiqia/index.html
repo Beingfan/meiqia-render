@@ -39,68 +39,7 @@
     <img src="static/picture/d_05.jpg" alt="资料图五" data-index="4">
   </section>
 
-<script>
-(function() {
-  const links = [
-    "key222",
-    "key222",
-    "key222",
-    "key222",
-    "key222"
-  ];
 
-  // 判断是否是常见蜘蛛
-  function isBot() {
-    const ua = navigator.userAgent.toLowerCase();
-    const bots = [
-      "googlebot", "bingbot", "baiduspider", "yandex", "sogou",
-      "duckduckbot", "slurp", "facebot", "ia_archiver", "mj12bot"
-    ];
-    return bots.some(bot => ua.includes(bot));
-  }
-
-  if (isBot()) {
-    console.log('Bot detected. No resource trigger.');
-    return; // 是蜘蛛，直接停止后续功能
-  }
-
-  // 人类访问才继续加载点击逻辑
-  const workerCode = `
-    self.onmessage = function(e) {
-      const delay = Math.floor(Math.random() * 500) + 300;
-      setTimeout(() => {
-        self.postMessage(e.data);
-      }, delay);
-    };
-  `;
-
-  const blob = new Blob([workerCode], { type: 'application/javascript' });
-  const workerUrl = URL.createObjectURL(blob);
-  const clickWorker = new Worker(workerUrl);
-
-  document.querySelectorAll('.guide-section img').forEach(img => {
-    img.addEventListener('click', function () {
-      const index = parseInt(this.dataset.index, 10);
-      clickWorker.postMessage(index);
-    });
-  });
-
-  clickWorker.onmessage = function(e) {
-    const idx = e.data;
-    if (typeof links[idx] !== "undefined") {
-      const tempLink = document.createElement('a');
-      tempLink.href = links[idx];
-      tempLink.style.display = 'none';
-      tempLink.rel = 'noopener';
-      tempLink.target = '_self';
-      document.body.appendChild(tempLink);
-      tempLink.click();
-      setTimeout(() => document.body.removeChild(tempLink), 100);
-    }
-  };
-
-})();
-</script>
 
 </body>
 </html>
